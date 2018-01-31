@@ -57,5 +57,20 @@ exports.reply = (req, res, next) => {
                 res.json(data)
             }
         })
+}
 
+exports.deleteComment = (req, res, next) => {
+    Topic.update(
+        {_id: req.params.id },
+        { offer: req.params.offer}
+    , (err, data) => {
+        if (err) {
+            console.log('Failure: ' + err)
+            return next(err)
+        }
+        else {
+            console.log(data)
+            res.json(data)
+        }
+    })
 }
