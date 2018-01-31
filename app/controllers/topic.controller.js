@@ -16,15 +16,15 @@ exports.getTopics = (req, res, next) => {
 
 
 exports.create = (req, res, next) => {
-    var Topic = new Topic(req.body)
-    Topic.save((err) => {
+    var topic = new Topic(req.body)
+    topic.save((err) => {
         if (err) {
             console.log('Failure')
             return next(err)
         }
         else {
             console.log('Success')
-            res.json(Topic)
+            res.json(topic)
         }
     })
 }
