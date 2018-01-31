@@ -62,7 +62,7 @@ exports.reply = (req, res, next) => {
 exports.deleteComment = (req, res, next) => {
     Topic.update(
         {_id: req.params.id },
-        { offer: req.params.offer}
+        { offer: req.body.offer}
     , (err, data) => {
         if (err) {
             console.log('Failure: ' + err)
