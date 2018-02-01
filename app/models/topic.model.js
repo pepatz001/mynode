@@ -24,15 +24,7 @@ var TopicSchema = new Schema({
         created: {
             type: Date,
             default: Date.now
-        },
-        replyOffer:[{
-          offerusername: String,
-          offerdescription: String,
-          created: {
-              type: Date,
-              default: Date.now
-          }
-        }]
+        }
       }]
 })
 
