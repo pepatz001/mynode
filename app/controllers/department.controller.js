@@ -38,10 +38,19 @@ exports.update = (req, res, next) => {
 
 exports.updateContent = (req, res, next) => {
     Department.update({_id: req.body.id}, {
-        content: req.body.content
+        content: req.body.content,
+        update: '1'
     }, {multi: true}, function(err, docs){
-        if(err) res.json(err)
-        else    res.status(204).end()
+        if(err) {
+            res.json(err)
+        } else {
+            Department.update({_id: req.body.oldId}, {
+                update: '0'
+            }, {multi: true}, function(err, docs){
+                if(err) res.json(err)
+                else    res.status(204).end()
+            })
+        }
     })
 }
 
