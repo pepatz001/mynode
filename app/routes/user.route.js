@@ -19,6 +19,6 @@ module.exports = (app) => {
     app.post('/logout', user.logout)
     app.delete(path + '/delete/:id', user.delete)
     app.put(path + '/edit/:id', user.update)
-
+    app.put(path + '/editDepartment', user.updateDepartment)
 }
 

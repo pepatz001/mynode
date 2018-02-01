@@ -94,3 +94,19 @@ exports.update = (req, res, next) => {
             else    res.status(204).end()
     })
 }
+
+exports.updateDepartment = (req, res, next) => {
+    Topic.update(
+        {department: req.body.departmentOld },
+        { department: req.body.department}
+    , (err, data) => {
+        if (err) {
+            console.log('Failure: ' + err)
+            return next(err)
+        }
+        else {
+            console.log(data)
+            res.json(data)
+        }
+    })
+}
