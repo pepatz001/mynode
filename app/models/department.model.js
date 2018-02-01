@@ -12,7 +12,10 @@ var DepartmentSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    update: Number
+    update: {
+        type: Number,
+        default: 0
+    }
 }); 
 
 mongoose.model('Department', DepartmentSchema);
