@@ -74,3 +74,10 @@ exports.deleteComment = (req, res, next) => {
         }
     })
 }
+
+exports.delete = (req, res, next) => {
+    Topic.remove({_id: req.params.id}, function(err, docs){
+        if(err) res.json(err)
+        else    res.status(204).end()
+    })
+}
