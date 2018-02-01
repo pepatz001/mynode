@@ -81,3 +81,13 @@ exports.delete = (req, res, next) => {
         else    res.status(204).end()
     })
 }
+
+exports.update = (req, res, next) => {
+    Topic.update({_id: req.params.id}, {
+        topicName: req.body.topicName,
+        description: req.body.description
+    }, {multi: true}, function(err, docs){
+        if(err) res.json(err)
+        else    res.status(204).end()
+    })
+}

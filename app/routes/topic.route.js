@@ -5,6 +5,7 @@ module.exports = (app) => {
       app.post(path + '/create', topic.create)
       app.get(path + '/:id', topic.getOne)
       app.put(path + '/reply/:id', topic.reply)
+      app.put(path + '/update/:id', topic.update)
       app.put(path + '/delete/:id', topic.deleteComment)
       app.delete(path + '/deleteTopic/:id', topic.delete)
 }
