@@ -13,8 +13,8 @@ var DepartmentSchema = new Schema({
         default: Date.now
     },
     update: {
-        type: Number,
-        default: 0
+        type: String,
+        default: '0'
     }
 }); 
 
