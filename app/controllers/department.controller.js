@@ -39,7 +39,8 @@ exports.update = (req, res, next) => {
 exports.updateContent = (req, res, next) => {
     Department.update({_id: req.body.id}, {
         content: req.body.content,
-        update: '1'
+        update: '1',
+        created: Date.now
     }, {multi: true}, function(err, docs){
         if(err) {
             res.json(err)
