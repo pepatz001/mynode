@@ -99,7 +99,7 @@ exports.updateDepartment = (req, res, next) => {
     User.update(
         { department: req.body.departmentOld },
         { department: req.body.department}
-    , (err, data) => {
+        , {multi: true}, (err, data) => {
         if (err) {
             console.log('Failure: ' + err)
             return next(err)
