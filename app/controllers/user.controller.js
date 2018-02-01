@@ -96,8 +96,8 @@ exports.update = (req, res, next) => {
 }
 
 exports.updateDepartment = (req, res, next) => {
-    Topic.update(
-        {department: req.body.departmentOld },
+    User.update(
+        { department: req.body.departmentOld },
         { department: req.body.department}
     , (err, data) => {
         if (err) {
